@@ -3,9 +3,9 @@
   "name": "hello-express",
   "version": "1.0.2",
   "description": "newart",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "akaneko": "^3.0.2",
