@@ -11,9 +11,9 @@ Build with nodejs
 ## Made by Ahmed 
 [instagram](https://www.instagram.com/9wmm/)
 <br>
-[Discord](https://discord.gg/ar-t)
+[Discord server](https://discord.gg/ar-t)
 <br>
-Discord user : 9wmm#7777
+Discord  : 9wmm#7777
 
 
 
