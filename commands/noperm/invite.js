@@ -3,7 +3,6 @@ const discord = require("discord.js");
 module.exports = {
   name: "invite",
   category: "noperm",
-  description: "",
   run: async (client, message, args) => {
     
     let embed = new discord.MessageEmbed()

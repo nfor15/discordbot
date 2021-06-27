@@ -10,8 +10,6 @@ const client = new discord.Client({
   disableEveryone: false
 });
 
-//client.queue = new Map();
-//client.vote = new Map();
 const { ready } = require("./debug/startmsg.js")
 
 

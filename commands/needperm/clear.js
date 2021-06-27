@@ -1,8 +1,7 @@
 module.exports = {
   name: "clear",
-  aliases:["c", "purge"],
+  aliases:["c", "delete"],
   category: "needperm",
-  description: "Delete bulk messages with 1 command",
   run: async (client, message, args) => {
     
             
@@ -20,14 +19,14 @@ module.exports = {
         return message.reply("This is not a number").then(m => m.delete(5000));
     }
 
-    let deleteAmount;
+    let maxmsg;
     if (parseInt(args[0]) > 100) {
-        deleteAmount = 100;
+        maxmsg = 100;
     } else {
-        deleteAmount = parseInt(args[0]);
+        maxmsg = parseInt(args[0]);
     }
 
-    message.channel.bulkDelete(deleteAmount, true)
+    message.channel.bulkDelete(maxmsg, true)
     .catch(err => message.reply(`error -> ${err}`));
     
   }

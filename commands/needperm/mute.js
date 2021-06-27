@@ -2,9 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "mute",
-  description: "mute someone",
   catagory: "needperm",
-  usage: "mute <@mention> .<reason>",
   run: async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_ROLES")) {
       return message.channel.send("You don't have perms.");
@@ -27,16 +25,14 @@ module.exports = {
       return message.channel.send(" reason? ");
     }
 
-   // const vrole = user.roles.cache
 
-    let muterole = message.guild.roles.cache.find(x => x.name === "muted");
+    let mrole = message.guild.roles.cache.find(x => x.name === "muted");
 
-    if (!muterole) {
+    if (!mrole) {
       return message.channel.send("\create Muted role please! ");
     }
     
-    //await user.roles.remove(vrole);
-    await user.roles.add(muterole);
+    await user.roles.add(mrole);
 
     await message.channel.send(
       `you muted ${message.mentions.users.first().username} for ${reason}`

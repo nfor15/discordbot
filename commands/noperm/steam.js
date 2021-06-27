@@ -6,17 +6,16 @@ var provider = new steam.SteamProvider();
     name: "steam",
     aliases: ["game"],
     category: "noperm",
-    usage: "Github <Name>",
   
   run: async (client, message, args) => {
-    let game = args[0]
-    let steampng = "https://cdn.discordapp.com/attachments/458004691402489856/470344660364034049/steam.png"
-    if (!game) return message.reply('Type game name please!`')
-    provider.search(game).then(result => {
+    let gamename = args[0]
+    let smalLlogo = "https://cdn.discordapp.com/attachments/458004691402489856/470344660364034049/steam.png"
+    if (!gamename) return message.reply('Type game name please!`')
+    provider.search(gamename).then(result => {
     provider.detail(result[0].id, "United States", "usd").then(results => {
         console.log(results)
     const embed = new Discord.MessageEmbed()
-    .setAuthor('Steam Explore', steampng)
+    .setAuthor('Steam Explore', smalLlogo)
   .setColor("RANDOM")
     .setTitle(result[0].name)
     .setThumbnail(results.otherData.imageUrl)
@@ -30,7 +29,7 @@ Sale Price : **${results.priceData.finalPrice}** USD`, true)
   .setColor("RANDOM")
     message.channel.send(embed).catch(e => {
         console.log(e)
-        message.reply(' `' + game + '` ')
+        message.reply(' `' + gamename + '` ')
     })
 })
 })

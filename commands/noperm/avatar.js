@@ -4,20 +4,19 @@ module.exports = {
   name: "avatar",
   aliases: ["av"],
   category: "noperm",
-  description: "Get dp of any user",
   run: async (client, message, args) => {
     
-    let target
+    let pepole
     
     if(message.mentions.users.first()) {
-      target = message.mentions.users.first();
+      pepole = message.mentions.users.first();
     } else if(args[0]) {
-        target = message.guild.members.cache.get(args[0]).user;
+        pepole = message.guild.members.cache.get(args[0]).user;
       } else {
-        target = message.author
+        pepole = message.author
       }
     
-    let avatar = target.displayAvatarURL({dynamic: true, size: 1024})
+    let avatar = pepole.displayAvatarURL({dynamic: true, size: 1024})
     
       let embed = new discord.MessageEmbed()
       

@@ -4,7 +4,6 @@ module.exports = {
   name: "removerole",
   aliases: ["unrole", "rrole"],
   category: "needperm",
-  description: "",
   run: async (client, message, args) => {
        if (!message.member.hasPermission("KICK_MEMBERS")) {
       return message.channel.send("no perms");
